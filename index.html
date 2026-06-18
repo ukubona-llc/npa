@@ -112,27 +112,47 @@ a:hover{ color: var(--brass-bright); }
   stroke: var(--brass);
   stroke-width: 1.4;
 }
+.relay-rail .actual-row .node-fifth{
+  stroke-width: 1.6;
+  stroke-dasharray: none;
+}
 .relay-rail .actual-row .arrow{
   stroke: var(--brass);
   stroke-width: 1.4;
   fill: none;
   marker-end: url(#relayArrow);
 }
+.relay-rail .actual-row .arc-fifth{
+  stroke: var(--brass);
+  stroke-width: 1.3;
+  stroke-dasharray: 1 3;
+  fill: none;
+  marker-end: url(#relayArrow);
+  opacity: 0.75;
+}
+.relay-rail .spec-row .circle-fifth{
+  stroke-dasharray: 2 3;
+  opacity: 0.2;
+}
 .relay-rail .actual-row text{
   font-family: var(--mono);
   font-size: 9.5px;
   fill: var(--ink-soft);
 }
+.relay-rail .actual-row text.label-fifth{
+  fill: var(--brass);
+  font-weight: 500;
+}
 @media (prefers-reduced-motion: no-preference){
-  .relay-rail .node-1{ animation: relayLight 5s ease-in-out 0.1s infinite; }
-  .relay-rail .node-2{ animation: relayLight 5s ease-in-out 0.9s infinite; }
-  .relay-rail .node-3{ animation: relayLight 5s ease-in-out 1.7s infinite; }
-  .relay-rail .node-4{ animation: relayLight 5s ease-in-out 2.5s infinite; }
-  .relay-rail .node-5{ animation: relayLight 5s ease-in-out 3.3s infinite; }
-  .relay-rail .arrow-1{ animation: relayFlow 5s ease-in-out 0.5s infinite; }
-  .relay-rail .arrow-2{ animation: relayFlow 5s ease-in-out 1.3s infinite; }
-  .relay-rail .arrow-3{ animation: relayFlow 5s ease-in-out 2.1s infinite; }
-  .relay-rail .arrow-4{ animation: relayFlow 5s ease-in-out 2.9s infinite; }
+  .relay-rail .node-1{ animation: relayLight 6.5s ease-in-out 0.1s infinite; }
+  .relay-rail .node-2{ animation: relayLight 6.5s ease-in-out 0.9s infinite; }
+  .relay-rail .node-3{ animation: relayLight 6.5s ease-in-out 1.7s infinite; }
+  .relay-rail .node-4{ animation: relayLight 6.5s ease-in-out 2.5s infinite; }
+  .relay-rail .node-5{ animation: relayLight 6.5s ease-in-out 3.6s infinite; }
+  .relay-rail .arrow-1{ animation: relayFlow 6.5s ease-in-out 0.5s infinite; }
+  .relay-rail .arrow-2{ animation: relayFlow 6.5s ease-in-out 1.3s infinite; }
+  .relay-rail .arrow-3{ animation: relayFlow 6.5s ease-in-out 2.1s infinite; }
+  .relay-rail .arrow-fifth{ animation: relayFlow 6.5s ease-in-out 2.9s infinite; }
 }
 @keyframes relayLight{
   0%, 100%{ opacity: 0.55; }
@@ -524,7 +544,8 @@ footer .chord{ font-family: var(--mono); color: var(--brass); }
       <circle cx="360" cy="14" r="7" />
       <circle cx="600" cy="14" r="7" />
       <circle cx="840" cy="14" r="7" />
-      <line x1="60" y1="14" x2="900" y2="14" />
+      <circle cx="1080" cy="14" r="7" />
+      <line x1="60" y1="14" x2="1080" y2="14" />
     </g>
     <!-- actual: relay, each node a function of the prior -->
     <g class="actual-row">
@@ -535,10 +556,13 @@ footer .chord{ font-family: var(--mono); color: var(--brass); }
       <circle class="node node-3" cx="600" cy="46" r="9" />
       <path class="arrow arrow-3" d="M609,46 L831,46" />
       <circle class="node node-4" cx="840" cy="46" r="9" />
+      <path class="arrow arrow-4" d="M849,46 L1071,46" />
+      <circle class="node node-5" cx="1080" cy="46" r="9" />
       <text x="120" y="60" text-anchor="middle">xAI</text>
       <text x="360" y="60" text-anchor="middle">Google</text>
       <text x="600" y="60" text-anchor="middle">OpenAI</text>
       <text x="840" y="60" text-anchor="middle">Anthropic</text>
+      <text x="1080" y="60" text-anchor="middle">Ukubona</text>
     </g>
   </svg>
 </div>
